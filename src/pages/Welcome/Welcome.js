@@ -3,6 +3,7 @@ import { createStackNavigator, createAppNavigator } from 'react-navigation'
 import { Text, View } from 'react-native'
 import { Storage } from '../../utils'
 import config from '../../enviroments/'
+import styles from './styles'
 
 export default class Welcome extends React.Component {
 
@@ -13,7 +14,10 @@ export default class Welcome extends React.Component {
   }
 
   render() { 
-    return <Text>Welcome</Text>
-
+    return (
+      <View style={styles.homeContainer}>
+        <Text>Details Screen</Text>
+      </View>
+    )
   }
 }
