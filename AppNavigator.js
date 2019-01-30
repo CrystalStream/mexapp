@@ -20,6 +20,11 @@ const MainNavigator = createStackNavigator({
   // Home: {
   //   screen: HomePage
   // },
+}, {
+  headerMode: 'none',
+  navigationOptions: {
+    headerVisible: false,
+  }
 })
 
 const AppNavigator = createAppContainer(MainNavigator)
