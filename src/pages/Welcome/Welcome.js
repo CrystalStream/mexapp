@@ -1,45 +1,32 @@
 import React from 'react'
 import { createStackNavigator, createAppNavigator } from 'react-navigation'
 import { View } from 'react-native'
-import { Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text } from 'native-base'
+import { Container, Title, Content, Button, Body, Text } from 'native-base'
 import { Storage } from '../../utils'
 import config from '../../enviroments/'
 import styles from './styles'
 
+import { DataForm } from '../../components/'
+
 export default class Welcome extends React.Component {
 
-  componentDidMount() {
-    console.log('antes')
+  async componentDidMount() {
     const loginKey = Storage.retrieveItem(config.firstLoginKey)
-    console.log('despues')
   }
 
   render() { 
     return (
-      <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
+      <Container style={styles.homeContainer}>
         <Content>
-          <Text>
-            This is Content Section
-          </Text>
+          <View style={styles.headerView}>
+            <Title>
+              Ganancia por mes
+            </Title>
+          </View>
+          <View style={styles.mainContent}>
+            <DataForm />
+          </View>
         </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Footer</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
       </Container>
     )
   }

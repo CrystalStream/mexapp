@@ -11,7 +11,6 @@ export default {
   },
 
   retrieveItem: async (key) => {
-    console.log('llave')
     try {
       const value = await AsyncStorage.getItem(key)
       if (value) {

@@ -1,17 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- * @lint-ignore-every XPLATJSCOPYRIGHT1
- */
 import React, { Component } from 'react'
+import { SafeAreaView } from 'react-native'
 import AppNavigator from './AppNavigator'
 
 export default class App extends React.Component {
-  
+
   render() {
-    return <AppNavigator />;
+    return (
+      <SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
+        <AppNavigator />
+      </SafeAreaView>
+    )
   }
 }
