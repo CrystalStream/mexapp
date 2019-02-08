@@ -11,22 +11,25 @@ import React, { Component } from 'react'
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 import { Platform, StyleSheet, Text, View } from 'react-native'
 
-import { WelcomePage } from './src/pages'
+import { WelcomePage, SplashPage, DashboardPage } from './src/pages'
 
 const MainNavigator = createStackNavigator({
+  Splash: {
+    screen: SplashPage
+  },
   Welcome: {
     screen: WelcomePage
+  },
+  Dashboard: {
+    screen: DashboardPage
   }
-  // Home: {
-  //   screen: HomePage
-  // },
 }, {
   headerMode: 'none',
   navigationOptions: {
-    headerVisible: false,
+    headerVisible: false
   }
 })
 
 const AppNavigator = createAppContainer(MainNavigator)
 
-export default AppNavigator;
+export default AppNavigator
