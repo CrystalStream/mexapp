@@ -25,14 +25,27 @@ const HomeNavigator = createBottomTabNavigator({
 })
 
 const MainNavigator = createStackNavigator({
-  Splash: SplashPage,
-  Welcome: WelcomePage,
-  Home: HomeNavigator
-}, {
-  headerMode: 'none',
-  navigationOptions: {
-    headerVisible: false
+  Splash: {
+    screen: SplashPage,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Welcome: {
+    screen: WelcomePage,
+    navigationOptions: {
+      header: null
+    }
+  },
+  Home: {
+    screen: HomeNavigator,
+    navigationOptions: {
+      gesturesEnabled: false,
+      header: null
+    }
   }
+}, {
+  headerMode: 'screen'
 })
 
 const MainNavigation = createAppContainer(MainNavigator)
