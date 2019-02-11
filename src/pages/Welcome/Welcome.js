@@ -23,7 +23,7 @@ export default class Welcome extends React.Component {
 
     if (!validate(this.state.payPerMonth, { required: true, number: true })) return alert('Ingresa un valor porfavor')
 
-    navigate('Dashboard')
+    navigate('Home')
   }
 
 
